@@ -1,0 +1,13 @@
+name: Build docker image
+
+on:
+  push:
+
+jobs:
+  build:
+    name: Build Analyse & Package
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build Docker image
+      run: docker build -t bigtop ./src
